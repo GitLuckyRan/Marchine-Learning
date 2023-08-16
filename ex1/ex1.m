@@ -8,9 +8,9 @@
 %  in this exericse:
 %
 %     warmUpExercise.m
-%     plotData.m
-%     gradientDescent.m
-%     computeCost.m
+%     plotData.m          绘图函数
+%     gradientDescent.m   计算他和θ1，2的函数
+%     computeCost.m        计算误差的函数
 %     gradientDescentMulti.m
 %     computeCostMulti.m
 %     featureNormalize.m
@@ -31,32 +31,31 @@ clear ; close all; clc
 fprintf('Running warmUpExercise ... \n');
 fprintf('5x5 Identity Matrix: \n');
 warmUpExercise()
-
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+pause;                      
 
 
 %% ======================= Part 2: Plotting =======================
 fprintf('Plotting Data ...\n')
-data = load('ex1data1.txt');
-X = data(:, 1); y = data(:, 2);
-m = length(y); % number of training examples
+data = load('ex1data1.txt');         %导入文本数据
+X = data(:, 1); y = data(:, 2);      %将文本数据赋值给X，y
+m = length(y); % number of training examples    
 
 % Plot Data
 % Note: You have to complete the code in plotData.m
 plotData(X, y);
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+pause;                                  
 
 %% =================== Part 3: Cost and Gradient descent ===================
 
-X = [ones(m, 1), data(:,1)]; % Add a column of ones to x
-theta = zeros(2, 1); % initialize fitting parameters
+X = [ones(m, 1), data(:,1)]; % Add a column of ones to x     %ones(m,n) m行n列个1 
+theta = zeros(2, 1); % initialize fitting parameters         %zeros(m,n) m行n列个0
 
 % Some gradient descent settings
-iterations = 1500;
-alpha = 0.01;
+iterations = 1500;                                           %迭代次数
+alpha = 0.01;                                                %步幅
 
 fprintf('\nTesting the cost function ...\n')
 % compute and display initial cost
@@ -103,7 +102,7 @@ pause;
 fprintf('Visualizing J(theta_0, theta_1) ...\n')
 
 % Grid over which we will calculate J
-theta0_vals = linspace(-10, 10, 100);
+theta0_vals = linspace(-10, 10, 100);    %linspace(x,y,n)生成一个介于x,y之间的n维向量
 theta1_vals = linspace(-1, 4, 100);
 
 % initialize J_vals to a matrix of 0's
