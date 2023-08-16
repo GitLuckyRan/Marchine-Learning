@@ -119,7 +119,7 @@ end
 
 % Because of the way meshgrids work in the surf command, we need to
 % transpose J_vals before calling surf, or else the axes will be flipped
-J_vals = J_vals';
+J_vals = J_vals';                     %由于surf(x,y,z)函数中z是线性存储，储存方式为先以移动y在移动x的顺序存储，所以x(i),y(j)中对应的为z(j,i),所以经过反转才能正确对应
 % Surface plot
 figure;
 surf(theta0_vals, theta1_vals, J_vals)
