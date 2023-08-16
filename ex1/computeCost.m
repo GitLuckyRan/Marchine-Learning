@@ -13,7 +13,9 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-
+predictions=X*theta;   %预测值
+sqrErrors = (predictions-y).^2; %计算误差值
+J=1/(2 * m) *sum(sqrErrors);
 
 
 
