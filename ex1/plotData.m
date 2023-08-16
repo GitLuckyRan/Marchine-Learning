@@ -16,9 +16,9 @@ figure; % open a new figure window
 %       appear as red crosses. Furthermore, you can make the
 %       markers larger by using plot(..., 'rx', 'MarkerSize', 10);
 
-plot(x,y,'rx','MarkerSize',2);
-ylabel('Profit in $10,000s');
-xlabel('Population of City in 10,000s');
+plot(x,y,'rx','MarkerSize',2);    %设置显示图像的参数
+ylabel('Profit in $10,000s');     %y轴的标题
+xlabel('Population of City in 10,000s');   %同上
 
 
 % ============================================================
