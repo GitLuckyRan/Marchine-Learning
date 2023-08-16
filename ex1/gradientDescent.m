@@ -17,7 +17,11 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
-
+theta_temp=theta
+    for j=1:length(theta)
+      theta_temp(j)=theta(j)-alpha/m * (X*theta - y)'* X(:,j) %求偏导数并求和
+    end
+   theta=theta_temp
 
 
 
@@ -26,7 +30,7 @@ for iter = 1:num_iters
     % ============================================================
 
     % Save the cost J in every iteration    
-    J_history(iter) = computeCost(X, y, theta);
+    J_history(iter) = computeCost(X, y, theta);   %记录每一次迭代的误差
 
 end
 
