@@ -24,7 +24,11 @@ sigma = zeros(1, size(X, 2));
 %               each feature. 
 %
 % Hint: You might find the 'mean' and 'std' functions useful.
-%       
+mu=mean(X);           %M = mean(A) 返回 A 沿大小大于 1 的第一个数组维度的元素的均值。如果 A 是向量，则 mean(A) 返回元素均值。如果 A 为矩阵，那么 mean(A) 返回包含每列均值的行向量。
+sigma=std(X,1,1);    %S = std(A,w,dim) 返回沿维度 dim 的标准差。要维持默认归一化并指定运算的维度，请在第二个参数中设置 w = 0。
+for i=1:size(X,2);
+  X_norm(:,i)=(X(:,i)-mu(i)) ./sigma(i)
+end
 
 
 
