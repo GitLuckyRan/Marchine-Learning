@@ -14,10 +14,10 @@
 %     plotData.m
 %     gradientDescent.m
 %     computeCost.m
-%     gradientDescentMulti.m
-%     computeCostMulti.m
-%     featureNormalize.m
-%     normalEqn.m
+%     gradientDescentMulti.m     %多元线性回归方程梯度算法
+%     computeCostMulti.m           
+%     featureNormalize.m           %特征缩放算法，适用于样本数量较大
+%     normalEqn.m                   %正则方程回归算法
 %
 %  For this part of the exercise, you will need to change some
 %  parts of the code below for various experiments (e.g., changing
@@ -91,7 +91,7 @@ theta = zeros(3, 1);
 
 % Plot the convergence graph
 figure;
-plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
+plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);   %n = numel(A) 返回数组 A 中的元素数目 n 等同于 prod(size(A))。
 xlabel('Number of iterations');
 ylabel('Cost J');
 
