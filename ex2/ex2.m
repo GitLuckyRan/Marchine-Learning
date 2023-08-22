@@ -95,8 +95,7 @@ options = optimset('GradObj', 'on', 'MaxIter', 400);   %计算θ的高级优化�
 %  Run fminunc to obtain the optimal theta
 %  This function will return theta and the cost
 [theta, cost] = ...
-	fminunc(@(t)(costFunction(t, X, y)), initial_theta, options);
-
+	fminunc(@(t)(costFunction(t, X, y)), initial_theta, options);  %fminunc函数，自己的costfunction不需要提供循环函数，只需要提供计算cost和gradient的操作即可，此函数会自动计算出θ的最优值
 % Print theta to screen
 fprintf('Cost at theta found by fminunc: %f\n', cost);
 fprintf('Expected cost (approx): 0.203\n');
