@@ -1,4 +1,5 @@
-%z=Hθ(X)=θ^TX，如果Z>0则y=1,如果Z<0,则y=0
+%若Y=1，则g>0.5,z>0即使得带入样本点到方程后使得给g>0.5,也就是y=1样本点应该在曲线上上方，即z>0；
+%当y=1时，代价方程应当使g>0.5时花费代价较小，g<0.5时花费代价大
 function g = sigmoid(z)
 %SIGMOID Compute sigmoid function
 %   g = SIGMOID(z) computes the sigmoid of z.
