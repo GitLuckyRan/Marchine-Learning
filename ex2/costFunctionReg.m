@@ -16,7 +16,7 @@ grad = zeros(size(theta));%初始化梯度，是J的偏导数
 %               Compute the partial derivatives and set grad to the partial
 %               derivatives of the cost w.r.t. each parameter in theta
 
-J=-1./m*(y'*log(sigmoid(X*theta)+(1-y)'*log(1-sigmoid(X*theta))))+lambda./m*theta'*theta;
+J=-1./m*(y'*log(sigmoid(X*theta)+(1-y)'*log(1-sigmoid(X*theta))))+lambda./(2*m)*theta'*theta;
 grad=1./m*X'*(sigmoid(X*theta)-y)+lambda./m*theta;
 
 
